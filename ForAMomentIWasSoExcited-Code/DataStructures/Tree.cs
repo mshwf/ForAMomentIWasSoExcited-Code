@@ -22,6 +22,12 @@ namespace ForAMomentIWasSoExcited_Code.DataStructures
         public string Graph { get; private set; }
         public TreeNode<TValue> Root { get; private set; }
         public TreeNode<TValue> Last { get; private set; }
+        /// <summary>
+        /// Add a node to the tree after the specified parent and return the node
+        /// </summary>
+        /// <param name="value">The value of the noe</param>
+        /// <param name="parent">The node's parent</param>
+        /// <returns></returns>
         public TreeNode<TValue> Add(TValue value, TreeNode<TValue> parent = null)
         {
             TreeNode<TValue> current = new TreeNode<TValue>(value);
