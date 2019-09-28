@@ -59,31 +59,5 @@ namespace ForAMomentIWasSoExcited_Code.DataStructures
             Count++;
             return current;
         }
-
-        //it would be cool to draw a well-visualized grapgh as well, I'm tired now
-        private void DrawGraph()
-        {
-            StringBuilder sb = new StringBuilder();
-            int spacesCount = 6;
-            var spaces = new string('\t', spacesCount);
-            sb.Append($"{spaces}{Root.Value}{spaces}");
-
-            for (int i = 0; i < Count; i++)
-            {
-
-            }
-            foreach (var child in Root.Children)
-            {
-
-            }
-        }
-        //not tested
-        public void Remove(TreeNode<TValue> treeNode)
-        {
-            foreach (var child in treeNode.Children)
-            {
-                child.Children = new List<TreeNode<TValue>>();
-            }
-        }
     }
 }
