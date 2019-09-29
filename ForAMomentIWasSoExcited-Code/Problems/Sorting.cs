@@ -10,6 +10,8 @@ namespace ForAMomentIWasSoExcited_Code.Problems
         //after first space is the metadata, if metadata contains letters then this order has higher priority.
         //sort orders where higher priority orders come first (lexicographically order), order by the metadata, if two orders has same metadata, then order by ID,
         //non higher priority orders, come in its original order, last.
+
+        //orderList example: {"zld 93 12", "fp iPad Mini", "10a Galaxy Note 10", "17g 12 25 6", "ab1 iPad Mini", "125 Galaxy Note 10 Plus"}
         public static List<string> PrioritizedOrders(int numOrders, string[] orderList)
         {
             IDictionary<string, string> prime = new Dictionary<string, string>();
