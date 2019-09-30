@@ -67,12 +67,9 @@ Route is (0, 0), (0, 1), (1, 1), (2, 1), (2, 0), (3, 0) The minimum route takes 
                     if (matrix[x][y] == 'X')
                     {
                         var curr = goal;
-                        while (true)
+                        while (curr != null)
                         {
-                            if (curr != null)
-                                route.AddLast(curr.Value);
-                            else
-                                break;
+                            route.AddFirst(curr.Value);
                             curr = curr.Parents.First();
                         }
                         return route;
