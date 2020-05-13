@@ -27,11 +27,11 @@ namespace ForAMomentIWasSoExcited_Code.Problems
                 else
                     nonPrime.Add(order);
             }
-           
-            var xprime = prime.OrderBy(x => x, new OrderPriorityComparer()).Select(x => x.Key + " " + x.Value).ToList();
 
-            xprime.AddRange(nonPrime);
-            return xprime;
+            var orderedPrimeOrders = prime.OrderBy(primeOrder => primeOrder, new OrderPriorityComparer()).Select(primeOrder => $"{primeOrder.Key} {primeOrder.Value}").ToList();
+
+            orderedPrimeOrders.AddRange(nonPrime);
+            return orderedPrimeOrders;
         }
     }
 }

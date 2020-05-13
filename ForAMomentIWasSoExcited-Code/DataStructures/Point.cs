@@ -13,10 +13,6 @@ namespace ForAMomentIWasSoExcited_Code.DataStructures
             R = r;
             C = c;
         }
-        public Point GoUp() => this + new Point(-1, 0);
-        public Point GoDown() => this + new Point(1, 0);
-        public Point GoRight() => this + new Point(0, 1);
-        public Point GoLeft() => this + new Point(0, -1);
         public static Point operator +(Point a, Point b)
         => new Point(a.R + b.R, a.C + b.C);
 

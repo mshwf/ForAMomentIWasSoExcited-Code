@@ -43,12 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Sorting.cs" />
     <Compile Include="DataStructures\Point.cs" />
     <Compile Include="DataStructures\SLinkedList.cs" />
     <Compile Include="DataStructures\Tree.cs" />
     <Compile Include="HelperClasses\OrderPriorityComparer.cs" />
     <Compile Include="IJustDiscoverdThis\Loops.cs" />
     <Compile Include="Problems\Graphs.cs" />
+    <Compile Include="Problems\MaxPairwiseProduct.cs" />
     <Compile Include="Problems\Sorting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

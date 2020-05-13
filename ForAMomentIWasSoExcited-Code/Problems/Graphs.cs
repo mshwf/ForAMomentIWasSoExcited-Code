@@ -46,7 +46,7 @@ Route is (0, 0), (0, 1), (1, 1), (2, 1), (2, 0), (3, 0) The minimum route takes 
             var head = new Point(0, 0);
             queue.Enqueue(head);
             visited[0, 0] = true;
-            //down,up,right,left
+            //down,up,right,left ({row, column})
             int[][] dirs = new int[][] { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };
             //on every node visited, we save it in this HashSet, every node becomes a potential parent for the next iteration's nodes, so we need to register these relations
             HashSet<TreeNode<Point>> parentsCache = new HashSet<TreeNode<Point>>();
@@ -59,7 +59,7 @@ Route is (0, 0), (0, 1), (1, 1), (2, 1), (2, 0), (3, 0) The minimum route takes 
                     Point point = queue.Dequeue();
                     TreeNode<Point> parent;
                     if (tree.Root == null)
-                        parent = tree.Add(point, tree.Last);
+                        parent = tree.Add(point);
                     else
                         parent = tree.Last;
                     int x = point.R;
@@ -107,6 +107,35 @@ Route is (0, 0), (0, 1), (1, 1), (2, 1), (2, 0), (3, 0) The minimum route takes 
                 steps++;
             }
             return null;
+        }
+
+        public static void Execute()
+        {
+            var orders = new string[] { "zld 93 12", "fp iPad Mini", "10a Galaxy Note 10", "17g 12 25 6", "ab1 iPad Mini", "125 Galaxy Note 10 Plus" };
+            var grid = new char[][]
+         {
+              new char[] { 'O', 'O', 'O', 'D' }, //0
+              new char[] { 'D', 'O', 'D', 'O' }, //1
+              new char[] { 'O', 'O', 'O', 'O' }, //2
+              new char[] { 'O', 'O', 'O', 'O' }, //3
+              new char[] { 'O', 'O', 'O', 'O' }, //4
+              new char[] { 'O', 'O', 'D', 'D' }, //5
+              new char[] { 'O', 'O', 'O', 'O' }, //6
+              new char[] { 'O', 'O', 'O', 'O' }, //7
+              new char[] { 'O', 'O', 'O', 'O' }, //8
+              new char[] { 'O', 'O', 'D', 'X' }, //9
+              new char[] { 'O', 'O', 'O', 'O' }, //10
+              new char[] { 'O', 'O', 'O', 'O' }, //11
+              new char[] { 'O', 'O', 'O', 'O' }, //12
+              new char[] { 'O', 'O', 'O', 'O' }, //13
+              new char[] { 'O', 'O', 'O', 'O' }, //14
+              new char[] { 'O', 'O', 'O', 'O' }, //15
+              new char[] { 'O', 'O', 'O', 'O' }, //16
+              new char[] { 'O', 'O', 'O', 'O' }, //17
+              new char[] { 'O', 'O', 'O', 'O' }, //18
+              new char[] { 'D', 'D', 'D', 'O' }  //19
+         };
+            var result = Problems.Graphs.FindShortestDistance(grid);
         }
 
     }
